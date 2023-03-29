@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="bg-[rgb(36,36,36)] text-green  h-screen">
+    <div className="bg-[rgb(36,36,36)] text-green  h-screen w-screen">
       <Head>
         <title>Priyank&apos;s Portfolio</title>
       </Head>

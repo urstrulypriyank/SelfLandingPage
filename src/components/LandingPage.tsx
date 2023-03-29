@@ -10,15 +10,15 @@ function LandingPage({}: Props) {
       "Hi, The Name's Priyank Rai",
       "Full-Stack Developer",
       "<Love to code/>",
-      "Experienced Linux user for over half a decade as primary desktop os",
+      "Experienced Linux user for over half a decade ",
     ],
     loop: true,
     delaySpeed: 1000,
   });
   return (
-    <div className=" flex justify-center text-center">
+    <div className="flex  flex-col justify-center items-center h-full">
       <BackgroundCircle />
-      <p className="font-extrabold  text-4xl text-green-500">
+      <p className="font-extrabold sm:text-xl md:text-4xl text-green-500 ">
         {text}
         <Cursor cursorColor="#F7ABa4" />
       </p>
