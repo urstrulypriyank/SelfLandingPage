@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .Landingbtn {
+    @apply px-4 py-2 border border-[#242424] cursor-pointer rounded-full text-sm uppercase tracking-widest text-green-400 transition-all hover:border-green-200/40 hover:text-gray-500/40 z-10;
+  }
+}
