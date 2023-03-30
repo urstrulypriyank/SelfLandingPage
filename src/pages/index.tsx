@@ -9,21 +9,27 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="bg-[rgb(36,36,36)] text-green  h-screen w-screen">
+    <div className="bg-[rgb(36,36,36)] text-green-700 h-screen snap-y snap-mandatory overflow-scroll z-0">
       <Head>
         <title>Priyank&apos;s Portfolio</title>
       </Head>
 
       {/* Headder Section */}
-
-      <Headder />
+      <nav className="snap-start">
+        <Headder />
+      </nav>
 
       {/* Intro  Section */}
-      <section id="LandingPage">
+      <section id="LandingPage" className="snap-center">
         <LandingPage />
       </section>
 
       {/* About */}
+      <section id="about" className="h-screen bg-blue-600 snap-center">
+        <div className="flex justify-center items-center h-full ">
+          <p>Hi</p>
+        </div>
+      </section>
 
       {/* Experience */}
 
