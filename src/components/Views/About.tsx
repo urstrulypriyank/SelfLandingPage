@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import myDp from "../assets/Images/Img1.jpeg";
+import myDp from "../../assets/Images/Img1.jpeg";
 import { motion } from "framer-motion";
 
 type Props = {};

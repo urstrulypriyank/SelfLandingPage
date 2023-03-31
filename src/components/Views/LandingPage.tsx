@@ -1,9 +1,9 @@
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import BackgroundCircle from "./BackgroundCircle";
+import BackgroundCircle from "../BackgroundCircle";
 import Image from "next/image";
 import { url } from "inspector";
-import myDp from "../assets/Images/Img1.jpeg";
+import myDp from "../../assets/Images/Img1.jpeg";
 import { SocialIcon } from "react-social-icons";
 import Link from "next/link";
 

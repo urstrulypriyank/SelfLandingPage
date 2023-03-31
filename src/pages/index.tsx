@@ -2,13 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Headder from "@/components/Headder";
-import LandingPage from "@/components/LandingPage";
-import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
+import Headder from "@/components/Views/Headder";
+import LandingPage from "@/components/Views/LandingPage";
+import Experience from "@/components/Views/Experience";
+import Projects from "@/components/Views/Projects";
+import Contact from "@/components/Views/Contact";
+import About from "@/components/Views/About";
+import Skills from "@/components/Views/Skills";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,18 +40,18 @@ export default function Home() {
         <Experience />
       </section>
 
-      {/* Projects */}
-      <section id="Skills" className="h-screen snap-center">
-        <Skills />
-      </section>
-      
-      {/* Projects */}
+      {/* Skills */}
       <section id="Skills" className="h-screen snap-center">
         <Skills />
       </section>
 
+      {/* Projects */}
+      <section id="Projects" className="h-screen snap-center">
+        <Projects />
+      </section>
+
       {/* Contact ME */}
-      <section id="contact" className="h-screen bg-blue-600 snap-center">
+      <section id="Contact" className="h-screen bg-blue-600 snap-center">
         <Contact />
       </section>
     </div>
