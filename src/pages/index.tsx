@@ -4,6 +4,11 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Headder from "@/components/Headder";
 import LandingPage from "@/components/LandingPage";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,27 +20,40 @@ export default function Home() {
       </Head>
 
       {/* Headder Section */}
-      <nav className="snap-start">
+
+      <nav className="snap-start  ">
         <Headder />
       </nav>
 
       {/* Intro  Section */}
-      <section id="LandingPage" className="snap-center">
+      <section id="LandingPage" className="snap-start">
         <LandingPage />
       </section>
 
       {/* About */}
-      <section id="about" className="h-screen bg-blue-600 snap-center">
-        <div className="flex justify-center items-center h-full ">
-          <p>Hi</p>
-        </div>
+      <section id="About" className="h-screen snap-start">
+        <About />
       </section>
 
       {/* Experience */}
+      <section id="Experience" className="h-screen snap-center">
+        <Experience />
+      </section>
 
       {/* Projects */}
+      <section id="Skills" className="h-screen snap-center">
+        <Skills />
+      </section>
+      
+      {/* Projects */}
+      <section id="Skills" className="h-screen snap-center">
+        <Skills />
+      </section>
 
       {/* Contact ME */}
+      <section id="contact" className="h-screen bg-blue-600 snap-center">
+        <Contact />
+      </section>
     </div>
   );
 }

@@ -51,7 +51,7 @@ function LandingPage({}: Props) {
           <Cursor cursorColor="#F7ABa4" />
         </p>
 
-        <div>
+        <div className="text-xs lg:text-xl">
           <Link href="#About">
             <button className="Landingbtn">About</button>
           </Link>

@@ -6,7 +6,7 @@ type Props = {};
 
 function Headder({}: Props) {
   return (
-    <header className=" p-2 flex flex-row justify-between rounded-xl max-w-7xl mx-auto z-20">
+    <header className="  p-2 flex flex-row justify-between rounded-xl max-w-7xl mx-auto z-20 ">
       <motion.div
         initial={{
           x: -500,
