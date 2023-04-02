@@ -26,7 +26,7 @@ const Contact = (props: Props) => {
       <h4 className=" text-center text-2xl text-green-900   ">
         Feel Free to contact me
       </h4>
-      <div className="flex flex-col w-screen justify-evenly items-center space-y-5 mt-10 ">
+      <div className="flex flex-col w-screen justify-evenly items-center space-y-5 mt-10 mb-5">
         {/* Phone Number */}
         <div>
           <Link href="tel:+917898099570" className="flex space-x-5  ">
