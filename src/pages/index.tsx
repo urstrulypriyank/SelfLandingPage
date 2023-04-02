@@ -9,35 +9,37 @@ import Projects from "@/components/Views/Projects";
 import Contact from "@/components/Views/Contact";
 import About from "@/components/Views/About";
 import Skills from "@/components/Views/Skills";
+import Education from "@/components/Views/Education";
+import Footer from "@/components/Views/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="bg-[rgb(36,36,36)] text-green-700 h-screen snap-y snap-mandatory overflow-scroll z-0">
+    <div className="bg-[rgb(36,36,36)] text-green-700 h-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden overflow-y-scroll z-0 scrollbar scrollbar-track-gray-500/20 scrollbar-thumb-green-500/50">
       <Head>
         <title>Priyank&apos;s Portfolio</title>
       </Head>
 
-      {/* Headder Section */}
+      {/* Headder/Navbar Section */}
 
       <nav className="snap-start  ">
         <Headder />
       </nav>
 
-      {/* Intro  Section */}
+      {/* Introduction  Section */}
       <section id="LandingPage" className="snap-start">
         <LandingPage />
       </section>
 
-      {/* About */}
+      {/* About me*/}
       <section id="About" className="h-screen snap-start">
         <About />
       </section>
 
-      {/* Experience */}
-      <section id="Experience" className="h-screen snap-center">
-        <Experience />
+      {/* Education and Experience*/}
+      <section id="Education" className="h-screen snap-start">
+        <Education />
       </section>
 
       {/* Skills */}
@@ -51,9 +53,14 @@ export default function Home() {
       </section>
 
       {/* Contact ME */}
-      <section id="Contact" className="h-screen bg-blue-600 snap-center">
+      <section id="Contact" className="h-screen snap-start">
         <Contact />
       </section>
+
+      {/* Footer */}
+      {/* <section id="Footer" className=" snap-end">
+        <Footer />
+      </section> */}
     </div>
   );
 }
