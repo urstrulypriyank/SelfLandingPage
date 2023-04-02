@@ -65,6 +65,13 @@ function LandingPage({}: Props) {
             <button className="Landingbtn">Projects </button>
           </Link>
         </div>
+        <Link
+          href="/docs/MyResume.pdf"
+          target="_blank"
+          className="Landingbtn bg-green-500 text-white hover:text-green-900/5 font-bold hover:bg-white"
+        >
+          Download My Resume
+        </Link>
       </div>
     </div>
   );

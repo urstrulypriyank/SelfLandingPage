@@ -19,14 +19,14 @@ const Contact = (props: Props) => {
     console.log(formData);
   };
   return (
-    <div className="relative flex flex-col  items-center justify-center h-screen  overflow-hidden w-screen">
-      <h3 className="absolute top-5 uppercase tracking-[20px] text-green-900  text-2xl">
+    <div className="relative flex flex-col  items-center justify-end h-screen  overflow-hidden w-screen">
+      <h3 className="absolute top-1  uppercase tracking-[20px] text-green-900  text-2xl max-sm:text-lg">
         Contact
       </h3>
-      <h4 className=" text-center text-2xl text-green-900 font-  ">
+      <h4 className=" text-center text-2xl text-green-900   ">
         Feel Free to contact me
       </h4>
-      <div className="flex flex-col w-screen justify-evenly items-center space-y-5  ">
+      <div className="flex flex-col w-screen justify-evenly items-center space-y-5 mt-10 ">
         {/* Phone Number */}
         <div>
           <Link href="tel:+917898099570" className="flex space-x-5  ">
