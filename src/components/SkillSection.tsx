@@ -14,11 +14,11 @@ const SkillSection = ({ directionLeft }: props) => {
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
       >
-        <div className="min-h-screen flex justify-center items-center ">
+        <div className="min-h-screen flex justify-center items-center w-screen ">
           <div className="max-w-screen-lg    shadow-lg p-10 rounded-lg">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <h3 className=" font-bold mb-2 md:text-sm">Languages</h3>
+                <h3 className=" font-bold mb-2 md:text-sm ">Languages</h3>
                 <ul>
                   <li>JavaScript</li>
                   <li>TypeScript</li>
@@ -37,9 +37,7 @@ const SkillSection = ({ directionLeft }: props) => {
                 </ul>
               </div>
               <div>
-                <h3 className="font-bold mb-2 md:text-sm">
-                  Frameworks
-                </h3>
+                <h3 className="font-bold mb-2 md:text-sm">Frameworks</h3>
                 <ul>
                   <li>Node</li>
                   <li>Express</li>
