@@ -19,7 +19,7 @@ const Contact = (props: Props) => {
     console.log(formData);
   };
   return (
-    <div className="relative flex flex-col  items-center justify-center h-screen space-y-4 overflow-hidden w-screen">
+    <div className="relative flex flex-col  items-center justify-center h-screen  overflow-hidden w-screen">
       <h3 className="absolute top-5 uppercase tracking-[20px] text-green-900  text-2xl">
         Contact
       </h3>
