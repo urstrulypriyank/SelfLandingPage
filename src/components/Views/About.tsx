@@ -8,7 +8,7 @@ type Props = {};
 const About = (props: Props) => {
   return (
     <div className="flex flex-col h-screen relative text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-      <h3 className="absolute top-20 uppercase tracking-[20px]  text-2xl">
+      <h3 className="absolute top-20 uppercase tracking-[20px]  text-2xl max-sm:top-5">
         About
       </h3>
 
@@ -29,7 +29,7 @@ const About = (props: Props) => {
           width={450}
           height={450}
           alt="Priyank Rai"
-          className=" -mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w64 md:h-96 xl:w-[600px] xl:h-[500px] mr-10 mt-10"
+          className=" -mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w64 md:h-96 xl:w-[600px] xl:h-[500px] mr-10 mt-10 max-md:mb-5"
         />
       </motion.div>
 

@@ -9,6 +9,8 @@ const eduInformation = [
     university: "RGPV, Bhopal",
     grade: "8.2",
     courseDuration: "June 2019 - May 2023",
+    docUrl:
+      "https://drive.google.com/file/d/1y9TwwtbxEn7K4ihU93SMg9_9Tm_NL3Tk/view?usp=share_link",
   },
   {
     course: "Higher Secondary School",
@@ -16,6 +18,8 @@ const eduInformation = [
     university: "CBSE",
     grade: "55.6%",
     courseDuration: "June 2017 - May 2018",
+    docUrl:
+      "https://drive.google.com/file/d/19OEDg_JodKfqdQ3YnEB9saYOnv2QCRGG/view?usp=share_link",
   },
   {
     course: "Secondary School Certificate",
@@ -23,6 +27,8 @@ const eduInformation = [
     university: "CBSE",
     grade: "8.6",
     courseDuration: "June 2015 - May 2016",
+    docUrl:
+      "https://drive.google.com/file/d/1nUd7NW8mJTGa_PD0-UFwJ-JcLIg5lUiV/view?usp=sharing",
   },
 ];
 const Educations = (props: Props) => {
@@ -39,7 +45,9 @@ const Educations = (props: Props) => {
               {detail.course}
             </h4>
             <span className="bg-green-800 text-white/70  hover:text-green-300 px-5 py-3 ">
-              <Link href="#">Download</Link>
+              <Link href={detail.docUrl} target="_blank">
+                Download
+              </Link>
             </span>
           </div>
 
