@@ -39,7 +39,7 @@ const About = (props: Props) => {
           Here is a Little <span className="text-green-700">Background</span>
         </h4>
         <p className="text-sm text-justify">
-          "Hi, my name is Priyank Rai, and I&apos;m a skilled full stack
+          Hi, my name is Priyank Rai, and I&apos;m a skilled full stack
           developer and DevOps enthusiast. I have over five years of experience
           working with Linux, and I recently graduated with a degree in Computer
           Science from Lakshmi Narain College of Technology & Science, Bhopal. I
@@ -49,7 +49,7 @@ const About = (props: Props) => {
           building scalable, reliable systems and working collaboratively with
           teams to achieve project success. If you&apos;re looking for a
           dedicated and experienced software developer, please don&apos;t
-          hesitate to reach out and connect with me."
+          hesitate to reach out and connect with me.
         </p>
       </div>
     </div>
