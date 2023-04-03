@@ -39,14 +39,17 @@ const About = (props: Props) => {
           Here is a Little <span className="text-green-700">Background</span>
         </h4>
         <p className="text-sm text-justify">
-          I&apos;m Priyank Rai I am a full stack developer and devops enthusiast
-          and daily driving Linux for 5+ years I use arch Btw, recent computer
-          science graduate from Lakshmi Narain College of Technolgy & Science,
-          Bhopal, I can work for you from developing a app to deploying and
-          monitoring it. I am currently seeking a software developer role in a
-          dynamic and forward-thinking company where I can utilize my skills and
-          contribute to its success. If you&apos;re interested in working
-          together, feel free to contact and connect with me
+          "Hi, my name is Priyank Rai, and I&apos;m a skilled full stack
+          developer and DevOps enthusiast. I have over five years of experience
+          working with Linux, and I recently graduated with a degree in Computer
+          Science from Lakshmi Narain College of Technology & Science, Bhopal. I
+          have a strong track record of developing and deploying high-quality
+          software applications, and I&apos;m comfortable working on both
+          front-end and back-end technologies. I&apos;m passionate about
+          building scalable, reliable systems and working collaboratively with
+          teams to achieve project success. If you&apos;re looking for a
+          dedicated and experienced software developer, please don&apos;t
+          hesitate to reach out and connect with me."
         </p>
       </div>
     </div>

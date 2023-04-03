@@ -55,8 +55,8 @@ function LandingPage({}: Props) {
           <Link href="#About">
             <button className="Landingbtn">About</button>
           </Link>
-          <Link href="#Experience">
-            <button className="Landingbtn">Experience</button>
+          <Link href="#Education">
+            <button className="Landingbtn">Education</button>
           </Link>
           <Link href="#Skills">
             <button className="Landingbtn">Skills</button>

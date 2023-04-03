@@ -58,9 +58,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      {/* <section id="Footer" className=" snap-end">
-        <Footer />
-      </section> */}
+        {/* <section id="Footer" className=" snap-end">
+          <Footer />
+        </section> */}
     </div>
   );
 }
