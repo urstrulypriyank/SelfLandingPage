@@ -23,7 +23,7 @@ export default function Home() {
 
       {/* Headder/Navbar Section */}
 
-      <nav className="fixed w-screen  ">
+      <nav className="w-screen snap-start  ">
         <Headder />
       </nav>
 
