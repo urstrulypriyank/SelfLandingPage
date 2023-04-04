@@ -36,7 +36,7 @@ const Educations = (props: Props) => {
     <div className="  flex w-screen h-screen mb-5  flex-col justify-center  items-center space-y-2 ">
       {eduInformation.map((detail) => (
         <div
-          className="border border-green-500 md:w-[80%] w-screen justify-center items-center max-sm:text-xs max-sm:mt-10"
+          className="border border-green-500 md:w-[80%] w-screen justify-center items-center max-sm:text-xs max-sm:mt-10 shadow-xl rounded-lg"
           key={detail.course}
         >
           {/* Degreen and Stream Detail */}

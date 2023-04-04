@@ -2,15 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-type props = {
-  directionLeft?: boolean;
-};
-const SkillSection = ({ directionLeft }: props) => {
+// type props = {
+//   directionLeft?: boolean;
+// };
+const SkillSection = () => {
   return (
     <div className="mt-10">
       <motion.div
-        className="group relative flex cursor-pointer"
-        initial={{ x: directionLeft ? -200 : 200, opacity: 0 }}
+        className=" relative flex cursor-pointer"
+        initial={{ x: -200, opacity: 0 }}
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
       >
@@ -77,71 +77,6 @@ const SkillSection = ({ directionLeft }: props) => {
             </div>
           </div>
         </div>
-
-        {/* <div className="h-screen flex flex-col justify-center items-center px-4">
-          <div className="max-w-screen-md w-full shadow-lg p-4 rounded-lg">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <h3 className="text-lg font-bold mb-2 space-x-2">
-                  Programming Languages
-                </h3>
-                <ul>
-                  <li className="mb-1">JavaScript</li>
-                  <li className="mb-1">TypeScript</li>
-                  <li className="mb-1">Python</li>
-                  <li className="mb-1">Bash</li>
-                  <li className="mb-1">C/C++</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-2">
-                  Frameworks and Libraries
-                </h3>
-                <ul>
-                  <li className="mb-1">Node, Express</li>
-                  <li className="mb-1">React, Redux</li>
-                  <li className="mb-1">Next.js</li>
-                  <li className="mb-1">React Native</li>
-                  <li className="mb-1">Tailwindcss</li>
-                  <li className="mb-1">Bootstrap</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-2">Markup Languages</h3>
-                <ul>
-                  <li className="mb-1">HTML5</li>
-                  <li className="mb-1">CSS3</li>
-                  <li className="mb-1">YAML</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-2">Core Subjects</h3>
-                <ul>
-                  <li className="mb-1">Operating System</li>
-                  <li className="mb-1">Computer Networking</li>
-                  <li className="mb-1">Data Structure</li>
-                  <li className="mb-1">Cloud Computing</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-2">Databases</h3>
-                <ul>
-                  <li className="mb-1">MySql</li>
-                  <li className="mb-1">MongoDB</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold mb-2">Tools</h3>
-                <ul>
-                  <li className="mb-1">Linux</li>
-                  <li className="mb-1">Docker</li>
-                  <li className="mb-1">Git</li>
-                  <li className="mb-1">Github</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </motion.div>
     </div>
   );
