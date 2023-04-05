@@ -11,6 +11,8 @@ import About from "@/components/Views/About";
 import Skills from "@/components/Views/Skills";
 import Education from "@/components/Views/Education";
 import Footer from "@/components/Views/Footer";
+import Script from "next/script";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
