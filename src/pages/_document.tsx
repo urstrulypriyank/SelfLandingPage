@@ -11,8 +11,7 @@ export default function Document() {
           name="description"
           content="Hi, I'm Priyank Rai, a 23-year-old full-stack web developer and DevOps enthusiast based in India. I hold a degree in Computer Science Engineering and I'm actively seeking software development opportunities. Explore my portfolio to see my skills and projects"
         />
-      </Head>
-      <Head>
+
         <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
