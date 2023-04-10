@@ -29,6 +29,7 @@ function LandingPage({}: Props) {
         width={150}
         height={150}
         className="rounded-full relative"
+        priority
       />
       <div className="flex flex-col justify-between items-center mt-5 z-20">
         <h2 className="text-sm uppercase text-gray-500 tracking-widest">
