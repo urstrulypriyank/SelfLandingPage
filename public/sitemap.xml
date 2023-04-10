@@ -9,18 +9,48 @@
 
 <url>
   <loc>https://www.priyankrai.live/</loc>
-  <lastmod>2023-04-05T08:19:17+00:00</lastmod>
+  <lastmod>2023-04-10T07:56:53+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.priyankrai.live/docs/MyResume.pdf</loc>
-  <lastmod>2023-04-05T08:19:17+00:00</lastmod>
+  <loc>https://www.priyankrai.live/resume</loc>
+  <lastmod>2023-04-10T07:56:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.priyankrai.live/#About</loc>
-  <lastmod>2023-04-05T08:19:17+00:00</lastmod>
+  <loc>https://www.priyankrai.live/marksheet/graduation</loc>
+  <lastmod>2023-04-10T07:56:53+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.priyankrai.live/marksheet/hsc</loc>
+  <lastmod>2023-04-10T07:56:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.priyankrai.live/marksheet/ssc</loc>
+  <lastmod>2023-04-10T07:56:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.priyankrai.live/docs/MyResume.pdf</loc>
+  <lastmod>2023-04-10T07:56:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.priyankrai.live/Pdf/graduation.pdf</loc>
+  <lastmod>2023-04-10T07:56:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.priyankrai.live/Pdf/hsc.pdf</loc>
+  <lastmod>2023-04-10T07:56:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.priyankrai.live/Pdf/ssc.pdf</loc>
+  <lastmod>2023-04-10T07:56:53+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
