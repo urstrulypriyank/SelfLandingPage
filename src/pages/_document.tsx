@@ -28,6 +28,8 @@ export default function Document() {
 `,
           }}
         />
+{/*         preconnect example */}
+        <link rel="preconnect" href="priyankrai.in" />
       </Head>
       <body>
         <Main />
