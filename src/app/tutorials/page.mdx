@@ -1,0 +1,36 @@
+import PageHeading from "../../components/BlogComponents/PageHeading";
+import { MDXProvider} from '@mdx-js/react';
+import BlogList from "../../components/BlogComponents/BlogList"
+import {getMdxDataList} from "../../lib/mdx"
+import fs from "node:fs/promises"
+import path from "node:path"
+
+export const metadata = {
+title: "List Of Tutorials",
+description:
+"We discuss about software development methodologies and guides which help in understanding setup or debug code",
+date: "7 Jun, 2024",
+author: "Priyank Rai",
+keywords: ["Next.js", "React", "JavaScript"],
+authors: [{ name: "Priyank Rai", url: "https:priyankrai.in" }],
+creator: "Priyank Rai",
+publisher: "urstrulypriyankrai",
+published: true,
+};
+
+export default async function page(props) {
+   
+  const postsList = await getMdxDataList();
+
+    return (
+        <section className="md:ml-6 ml-0">
+          <PageHeading {...metadata} />
+          <div>
+            <BlogList postsList={postsList} />
+          </div>
+          <div className="text-xl">
+            {props.children}
+          </div>
+        </section>
+      );
+    }

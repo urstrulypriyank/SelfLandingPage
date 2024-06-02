@@ -1,0 +1,526 @@
+export const metadata = {
+    title: "Prisma For Beginers",
+    description:
+      "Prisma is a powerfull orm for nodejs based application. Ultimately It improves developer experience. Follows Easy to Pick declaritive Schema decleration",
+    date: "20 Jun, 2024",
+    author: "Priyank Rai",
+    keywords: ["prisma", "orm", "database"],
+    authors: [{ name: "Priyank Rai", url: "https:priyankrai.in" }],
+    creator: "Priyank Rai",
+    publisher: "urstrulypriyankrai",
+    published: true,
+  };
+  
+## About Prisma
+It is an Open Source ORM for proivding full  type safety i.e with the help of @prisma/client the types can be leveraged in backend.
+
+prisma/client can be used in any nodeJS or TypeScript environment or framework.
+
+\- Prisma provide declarative approach for the schema definition unlike query generators.
+
+## Getting Started
+
+Getting started is simple and can be checked from [prisma.io](https://prisma.io) though i will be covering for NextJS using app directory.
+
+&nbsp;
+
+1\. Setting up NextJS
+
+```bash
+>  npx create-next-app@latest my-nextjs-prisma-app
+>  cd my-nextjs-prisma-app
+```
+
+2.  Install prisma
+
+```bash
+> npm install prisma @prisma/cli --save-dev
+```
+
+3\. Set Up Prisma  
+Initialize Prisma in your project. Prisma will create a `prisma` directory and generate some initial files:
+
+```bash
+> npx prisma init
+```
+
+4\. Configure 'schema.prisma' file
+
+```prisma
+datasource db {
+  provider     = "sqlite"
+  url          = env("DATABASE_URL")
+
+}
+```
+
+A datasource determines how prisma ORM connect with your db.
+
+In datasource block we define a filed called provider which contain name of database that we are going to use like: postgresql, mongodb ...
+
+A prisma schema can only have one data source.
+
+5\. Sync The Schema With Database
+
+After you define the schema and models -> translates to table or collection in terms of dbs. you can use below command to sync db with schema
+
+`> npx prisma db push`
+
+## Data Base Schema
+
+Schema defines how you wanna structure and map the data in the db
+
+The default location for the prisma schema file is
+
+`./prisma/schema.prisma`
+
+`./schema.prisma`
+
+Alternatively you can specify your own custom location in package.json
+
+```json
+"prisma": {
+  "schema": "db/schema.prisma"
+}
+```
+
+<hr />
+
+### Multi-File Prisma Schema
+
+The directory that is created by `npx prisma init` i.e prisma directory can be used to create a new folder called schema and all other schema file can be nested like &lt;your-file-name&gt;.schema where replace &lt;your-file-name&gt; with fileName
+
+```bash
+my-app/
+├─ ...
+├─ prisma/
+│  ├─ schema/
+│  │  ├─ post.prisma
+│  │  ├─ schema.prisma
+│  │  ├─ user.prisma
+├─ ...
+```
+
+&nbsp;
+
+## Data Models In Prisma
+
+In Data Models section we will gonna know about Models, Relations, Indexes and VIews
+
+### Models
+
+Defining Models means Defining Tables or Collections in mongodb
+
+In schema definition we define model i.e table which will have entity like Name,  Email,  id etc.. and also the data type of same with relation like
+
+```prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id      Int      @id @default(autoincrement())
+  email   String   @unique
+  name    String?
+  role    Role     @default(USER)
+  posts   Post[]
+  profile Profile?
+}
+
+model Profile {
+  id     Int    @id @default(autoincrement())
+  bio    String
+  user   User   @relation(fields: [userId], references: [id])
+  userId Int    @unique
+}
+
+model Post {
+  id         Int        @id @default(autoincrement())
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  title      String
+  published  Boolean    @default(false)
+  author     User       @relation(fields: [authorId], references: [id])
+  authorId   Int
+  categories Category[]
+}
+
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String
+  posts Post[]
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+```
+
+```prisma
+// From the above code fragment we can see there is mode
+model table_name {
+
+Email  String  @unique
+
+RollNo Int @unique @id @default(autoincrement())
+
+}
+```
+
+so in above example fileds look like
+
+Entity_Name  Data_Type Attributes
+
+NOTE: In General PascalCase naming in models  like model StudentData {} might not translate directly to table name.
+
+There is a way out to control the table name manually using @@map(NAME_OF_TABLE)
+
+```prisma
+model StudentInformation {
+  // Fields
+
+  @@map("student_information")
+}
+```
+
+&nbsp;
+
+### Fields
+
+The properties of models are called fields.
+
+Structured as:
+
+Field*Name        Field_Type            Optional_Modifiers*&\_Attributes
+
+for ex:
+
+Email                 String                     @unique
+
+#### Field Types
+
+All the fields types fall into 2 categories:
+
+\- Scalar Types
+
+\- Relational Types
+
+1\. Scalar Types:  There are the types provided by database or mapped to native database types.
+
+- [`String`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#string)
+- [`Boolean`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#boolean)
+- [`Int`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#int)
+- [`BigInt`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#bigint)
+- [`Float`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#float)
+- [`Decimal`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#decimal)
+- [`DateTime`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#datetime)
+- [`Json`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#json)
+- [`Bytes`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#bytes)
+- [`Unsupported`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#unsupported)
+
+2\. Relational Types
+
+These are the types which have it's type as another model
+
+i.e a Company Model having field called Employee will have type Employee which will refer to Model Employee.
+
+Prisma also support Native Types Provided by database
+
+example:
+
+```prisma
+model Post {
+  id      Int    @id
+  title   String @db.VarChar(200)
+  content String
+}
+```
+
+**Type Modifiers :**
+
+- [`[]`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#-modifier) Make a field a list
+- [`?`](https://www.prisma.io/docs/orm/reference/prisma-schema-reference#-modifier-1) Make a field optional
+  {" "}
+  <br />
+
+**Scalar List:**
+
+List help in storing list of items of modes like
+
+```prisma
+// Post Field Inside User will
+model User {
+
+post Post\[\] // list of posts
+
+}
+```
+
+<br />
+NOTE: Every Filed Data is mandatory untill type have ? -> representing optional field.
+Default value of optional field is null.
+
+There is possibility of encountering unsupported type in prisma. You can create unsupported type during introspection of db. or pulling pre-created schema from db
+
+You will find something like unsupported("TYPE_NAME") for example
+
+`positions Unsupported("circle")`
+
+`location Unsupported("POLYGON")?`
+
+#### Defining Attributes
+
+Attributes are used to modify the behaviour of fields and model block.
+
+example includes:
+
+@id -> used to create primary_field.
+
+@default -> used to create default value of scalar fields
+
+@unique ->
+
+In an relational db. If a model does not have an @id @@id ,It is mandatory to define a @unique or @@unique block.
+
+In non-relational like mongoDB
+
+or you can define primary key as combination of model fields.
+
+```prisma
+model User {
+  firstName String
+  lastName  String
+  email     String  @unique
+  isAdmin   Boolean @default(false)
+
+  @@id(name: "fullName", fields: [firstName, lastName])
+}
+```
+
+&nbsp;**Defining an Index:**
+
+You can define index on one or multiple filed
+
+```prisma
+model Post {
+  id      Int     @id @default(autoincrement())
+  title   String
+  content String?
+
+  @@index([title, content])
+}
+```
+
+&nbsp;**Enums:**
+
+It is scalar data type in prisma , enums are defined via enum block for example user has a role
+
+```prisma
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+  role  Role    @default(USER)
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+```
+
+**Composite Types :**
+
+We can define the type for emmbeded document
+
+```prisma
+model Product {
+  id     String  @id @default(auto()) @map("_id") @db.ObjectId
+  name   String
+  photos Photo[]
+}
+
+type Photo {
+  height Int
+  width  Int
+  url    String
+}
+```
+
+#### Functions for prisma models.
+
+Prisma schema supports multiple function that enhances functionality
+
+like
+
+autoincrement() -> autoincrement the value
+
+now() -> return the value of current time.
+
+uuid() and cuid() for the id generator.
+
+these are the functions implemented at database level.
+
+#### Queries in Prisma
+
+queries help us in interaction with the db and perform crud operation
+
+The list of available crude queries:
+
+- [`findMany()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#findmany)
+- [`findFirst()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#findfirst)
+- [`findFirstOrThrow()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#findfirstorthrow)
+- [`findUnique()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#findunique)
+- [`findUniqueOrThrow()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#finduniqueorthrow)
+- [`create()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#create)
+- [`update()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#update)
+- [`upsert()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#upsert)
+- [`delete()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#delete)
+- [`createMany()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#createmany)
+- [`createManyAndReturn()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#createmanyandreturn)
+- [`updateMany()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#updatemany)
+- [`deleteMany()`](https://www.prisma.io/docs/orm/reference/prisma-client-reference#deletemany)  
+   Example of query:
+  ```prisma
+  const newUser = await prisma.user.create({
+    data: {
+      name: 'Alice',
+    },
+  })
+  const allUsers = await prisma.user.findMany()
+  ```
+
+&nbsp;
+
+## Relations In Prisma
+
+Relation is a connection between two models in the prisma schema.
+
+relation can be one -> one a Employee can have designation
+
+one-> many   a user can have multiple post
+
+many -> one a posts can have users tagged
+
+example: one -> many relation b/w user and posts
+
+```prisma
+model User {
+  id    Int    @id @default(autoincrement())
+  posts Post[]
+}
+
+model Post {
+  id       Int  @id @default(autoincrement())
+  author   User @relation(fields: [authorId], references: [id])
+  authorId Int // relation scalar field  (used in the `@relation` attribute above)
+}
+```
+
+in the above example user have posts field of type mode i.e Post Model means it will store list of posts
+
+In model post field author is defined as relation using @relation(fields:\[authorId\], refrence: \[id\]) means ultimately authorId will hold model User having field id
+
+Ultimately relation author will not be appearing as field in database rather cosider it a way for defining foreign key.
+
+Types of realations:
+
+1\. one - one
+
+```prisma
+model User {
+  id      Int      @id @default(autoincrement())
+  profile Profile?
+}
+
+model Profile {
+  id     Int  @id @default(autoincrement())
+  user   User @relation(fields: [userId], references: [id])
+  userId Int  @unique // relation scalar field (used in the `@relation` attribute above)
+}
+```
+
+2\. one- many
+
+```prisma
+model User {
+  id    Int    @id @default(autoincrement())
+  posts Post[]
+}
+
+model Post {
+  id       Int  @id @default(autoincrement())
+  author   User @relation(fields: [authorId], references: [id])
+  authorId Int
+}
+```
+
+&nbsp;
+
+3 many - many
+
+```prisma
+model Post {
+  id         Int        @id @default(autoincrement())
+  title      String
+  categories Category[]
+}
+
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String
+  posts Post[]
+}
+```
+
+### Referential Action in Prisma
+
+These are the policy that determine how the prisma should handle referenced record in update or delete query.
+
+There are 2 refrential action
+
+\- onDelete
+
+\- onUpdate
+
+and they can have values as [`Cascade`](https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/referential-actions#cascade) [`Restrict`](https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/referential-actions#restrict) [`NoAction`](https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/referential-actions#noaction) [`SetNull`](https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/referential-actions#setnull) [`SetDefault`](https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/referential-actions#setdefault)
+
+Referential actions are defined in the @realation() attribute and maps to foreign key constraint.
+
+```prisma
+model Post {
+  id       Int    @id @default(autoincrement())
+  title    String
+  author   User   @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId Int
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  posts Post[]
+}
+```
+
+CASCADE:
+
+If the user is deleted their referenced post will be deleted and if user.id is update post authorId which is refrenced from User Model will be updated as well.
+
+RESTRICT:
+
+It will prevent Model which will have referenced field to be deleted or updated untill and unless referenced model itself is not exist in db.
+
+NOACTION: will folllow db default behaviour.
+
+SETNULL:
+
+When deleting a `User`, the `authorId` will be set to `NULL` for all its authored posts.
+
+When changing a `User`'s `id`, the `authorId` will be set to `NULL` for all its authored posts.
+
+&nbsp;What's Next: Learn about prisma client to explore how to leverage query for efficient CRUD and data filtering.
