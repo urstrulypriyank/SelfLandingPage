@@ -1,6 +1,6 @@
 import ExperienceSetcion from "@/components/ExperienceSetcion";
 import HeroSection from "@/components/HeroSection";
-import Head from "next/head";
+
 import SkillSection from "@/components/SkillSection";
 
 import type { Metadata } from "next";
@@ -48,9 +48,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="">
-      <Head>
-        <meta name="msvalidate.01" content="E981FA46BBD7F7551361D4CBBE380971" />
-      </Head>
       <HeroSection />
       <SkillSection />
       <ExperienceSetcion />
