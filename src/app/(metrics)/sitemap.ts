@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
- 
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -15,9 +15,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: 'https://acme.com/tutorials',
+      url: 'https://priyankrai.in/tutorials',
       lastModified: new Date(),
       changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+    {
+      url: 'https://priyankrai.in/tutorials/prisma',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
       priority: 0.5,
     },
   ]
