@@ -48,6 +48,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="">
+      <Head>
+        <meta name="msvalidate.01" content="E981FA46BBD7F7551361D4CBBE380971" />
+      </Head>
       <HeroSection />
       <SkillSection />
       <ExperienceSetcion />
